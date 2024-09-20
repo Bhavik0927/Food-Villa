@@ -1,18 +1,20 @@
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useLocation from "../../utils/useLocation";
+import LocationCard from "./LocationCard";
+import Deals from "./Deals";
 
 const RestaurantMenu = () => {
     const [restaurant, setRestaurant] = useState([]);
 
     let { id } = useParams();
-    let {location} = useLocation();
+    let { location } = useLocation();
 
-    useEffect(() =>{
-        if(location){
+    useEffect(() => {
+        if (location) {
             getRestaurantData(location);
         }
-    },[location]);
+    }, [location]);
 
     const getRestaurantData = async (location) => {
         try {
@@ -20,7 +22,7 @@ const RestaurantMenu = () => {
             const data = await fetch(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=${location.latitude}&lng=${location.longitude}&restaurantId=` + id);
             const response = await data.json();
             setRestaurant(response.data.cards);
-            console.log(response.data.cards); 
+            console.log(response.data.cards);
 
         } catch (error) {
             console.log(error)
@@ -28,7 +30,11 @@ const RestaurantMenu = () => {
     }
 
     return (restaurant.length === 0) ? ("Data is fetching...") : (
-        <h1>Data is fetched</h1>
+        <>
+            <h1>{restaurant[0].card.card.text}</h1>
+            <LocationCard props = {restaurant[2].card.card.info} />
+            <Deals />
+        </>
     )
 }
 
