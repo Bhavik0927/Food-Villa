@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import useLocation from "../../utils/useLocation";
 import LocationCard from "./LocationCard";
 import Deals from "./Deals";
+import RecommandedMenu from "./RecommandedMenu";
 
 const RestaurantMenu = () => {
     const [restaurant, setRestaurant] = useState([]);
@@ -33,7 +34,8 @@ const RestaurantMenu = () => {
         <>
             <h1>{restaurant[0].card.card.text}</h1>
             <LocationCard props = {restaurant[2].card.card.info} />
-            <Deals />
+            <Deals props={restaurant[3]?.card?.card?.gridElements?.infoWithStyle?.offers} />
+            <RecommandedMenu props={restaurant[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards} />
         </>
     )
 }

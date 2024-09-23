@@ -5,7 +5,7 @@ const TopRestaurant = ({ props }) => {
    
     const title = get(props, 'card.card.header.title');
     const restaurants = get(props, 'card.card.gridElements.infoWithStyle.restaurants');
-    console.log(restaurants);
+    // console.log(restaurants);
     return (
         <div className="pt-10">
             <h1 className="text-2xl font-bold">{title}</h1>
