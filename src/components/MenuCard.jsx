@@ -14,7 +14,7 @@ const MenuCard = ({ prop, isOpen }) => {
         <>
             {isOpen && (
                 <div className='border-b border-zinc-300 py-10 flex justify-evenly mb-2'>
-                    <div className='w-2/4 px-3 '>
+                    <div className='w-3/4 px-3 '>
                         <h1 className="font-bold text-xl">{name}</h1>
                         <p className="font-semibold">₹{prodPrice / 100} </p>
                         <h2 className="flex items-center  font-bold text-green-500"><FaStar />{prop.ratings.aggregatedRating.rating} <span className="text-black font-semibold ml-2">{prop.ratings.aggregatedRating.ratingCount} </span> </h2>

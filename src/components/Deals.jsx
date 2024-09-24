@@ -2,8 +2,8 @@ const Deals = ({ props }) => {
 
   // console.log(props);
   return (
-    <div className="border border-zinc-400 rounded-md">
-      <h1>Deals for you</h1>
+    <div className=" my-4">
+      <h1 className="font-bold text-xl mb-4">Deals for you</h1>
       <div className="flex gap-2 overflow-x-auto whitespace-nowrap scroll-smooth m-2 custom-scrollbar mb-4">
         {
           props.map((e) => {

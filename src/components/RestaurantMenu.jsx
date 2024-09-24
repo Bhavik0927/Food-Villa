@@ -33,14 +33,14 @@ const RestaurantMenu = () => {
     }
 
     return (restaurant.length === 0) ? ("Data is fetching...") : (
-        <>
-            <h1>{restaurant[0].card.card.text}</h1>
+        <div className="px-44 ">
+            <h1 className="font-bold text-2xl mb-4">{restaurant[0].card.card.text}</h1>
             <LocationCard props = {restaurant[2].card.card.info} />
             <Deals props={restaurant[3]?.card?.card?.gridElements?.infoWithStyle?.offers} />
             <RecommandedMenu props={restaurant[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards} />
             <RecommandedMenu2 props={restaurant[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards} />
             <Recommanded3 props={restaurant[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards} />
-        </>
+        </div>
     )
 }
 

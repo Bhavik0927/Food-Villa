@@ -12,7 +12,7 @@ const RecommandedMenu2 = ({ props }) => {
     const Title = get(props, '[3].card.card.title');
 
     return (
-        <div className="container px-24">
+        <div className="container ">
 
             <div className="flex justify-between items-center cursor-pointer p-4 hover:bg-gray-100" onClick={() => setIsOpen(!isOpen)} >
                 <h2 className="font-medium text-lg">{Title}</h2>

@@ -8,8 +8,9 @@ const Recommanded3 = ({ props }) => {
 
     const Recommanded = get(props, '[4].card.card.itemCards');
     const Title = get(props, '[4].card.card.title');
+    console.log(Recommanded);
     return (
-        <div className="container px-24">
+        <div className="container ">
 
             <div className="flex justify-between items-center cursor-pointer p-4 hover:bg-gray-100" onClick={() => setIsOpen(!isOpen)} >
                 <h2 className="font-medium text-lg">{Title}</h2>
