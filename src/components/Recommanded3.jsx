@@ -1,13 +1,13 @@
 import get from "lodash.get";
-import MenuCard from "./MenuCard";
 import { useState } from "react";
+import MenuCard from "./MenuCard";
 
-const RecommandedMenu = ({ props }) => {
+const Recommanded3 = ({ props }) => {
     const [isOpen, setIsOpen] = useState(false);
-   
-    const Recommanded = get(props, '[2].card.card.itemCards');
-    const Title = get(props,'[2].card.card.title');
-    
+    console.log(props);
+
+    const Recommanded = get(props, '[4].card.card.itemCards');
+    const Title = get(props, '[4].card.card.title');
     return (
         <div className="container px-24">
 
@@ -24,6 +24,4 @@ const RecommandedMenu = ({ props }) => {
     )
 }
 
-export default RecommandedMenu;
-
-// e.card.info
+export default Recommanded3;

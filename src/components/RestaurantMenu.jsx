@@ -4,6 +4,8 @@ import useLocation from "../../utils/useLocation";
 import LocationCard from "./LocationCard";
 import Deals from "./Deals";
 import RecommandedMenu from "./RecommandedMenu";
+import RecommandedMenu2 from "./RecommandedMenu2";
+import Recommanded3 from "./Recommanded3";
 
 const RestaurantMenu = () => {
     const [restaurant, setRestaurant] = useState([]);
@@ -36,6 +38,8 @@ const RestaurantMenu = () => {
             <LocationCard props = {restaurant[2].card.card.info} />
             <Deals props={restaurant[3]?.card?.card?.gridElements?.infoWithStyle?.offers} />
             <RecommandedMenu props={restaurant[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards} />
+            <RecommandedMenu2 props={restaurant[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards} />
+            <Recommanded3 props={restaurant[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards} />
         </>
     )
 }
