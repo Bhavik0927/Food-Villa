@@ -21,7 +21,7 @@ const MenuCard = ({ prop, isOpen }) => {
                         <p>{description}</p>
                     </div>
                     <div className='relative'>
-                        <img className='w-[156px] h-[144px] rounded-2xl' src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/${imageId}`} alt={name} />
+                        <img className=' w-[156px] h-[144px] rounded-2xl' src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/${imageId}`} alt={name} />
                         <button className=' absolute -bottom-3 right-5  bg-white font-bold text-green-500  w-28 h-8 rounded-lg hover:bg-slate-200 ' onClick={() => addFoodItem(prop)}>ADD</button>
                     </div>
                 </div>
