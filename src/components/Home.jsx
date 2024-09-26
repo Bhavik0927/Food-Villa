@@ -24,7 +24,7 @@ const Home = () => {
       const response = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${location.latitude}&lng=${location.longitude}&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`);
       let data = await response.json();
       // console.log(data)
-      // console.log(data.data);
+      console.log(data.data);
       setAllRestaurant(data.data);
       setLoading(false);
     } catch (error) {

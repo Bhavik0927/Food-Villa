@@ -5,12 +5,14 @@ import { useState } from "react";
 const RecommandedMenu = ({ props }) => {
     const [isOpen, setIsOpen] = useState(false);
    
+    console.log(props)
     const Recommanded = get(props, '[2].card.card.itemCards');
+    console.log(Recommanded);
     const Title = get(props,'[2].card.card.title');
     
     return (
         <div className="container ">
-
+       
             <div className="flex justify-between items-center cursor-pointer p-4 hover:bg-gray-100" onClick={() => setIsOpen(!isOpen)} >
                 <h2 className="font-medium text-lg">{Title}</h2>
                 <span className={`transform transition-transform ${isOpen ? 'rotate-180' : 'rotate-0'}`}>

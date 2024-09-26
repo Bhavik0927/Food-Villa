@@ -8,7 +8,7 @@ const TopRestaurant = ({ props }) => {
     const restaurants = get(props, 'card.card.gridElements.infoWithStyle.restaurants');
     
     return (
-        <div className="pt-10">
+        <div className="pt-10 px-44">
             <h1 className="text-2xl font-bold">{title}</h1>
             <div className="  flex overflow-x-auto whitespace-nowrap scroll-smooth m-2 custom-scrollbar">
                 {
