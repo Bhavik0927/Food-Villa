@@ -10,11 +10,13 @@ const RecommandedMenu = ({ props }) => {
     console.log(Recommanded);
     const Title = get(props,'[2].card.card.title');
     
-    return (
+    if (!Recommanded) return null;
+
+    return (Recommanded?.length === 0) ? ("Server Error") : (
         <div className="container ">
-       
+            {/* <h1>Recommanded</h1> */}
             <div className="flex justify-between items-center cursor-pointer p-4 hover:bg-gray-100" onClick={() => setIsOpen(!isOpen)} >
-                <h2 className="font-medium text-lg">{Title}</h2>
+                <h2 className="font-medium text-lg">{Title} ({Recommanded.length} items)</h2>
                 <span className={`transform transition-transform ${isOpen ? 'rotate-180' : 'rotate-0'}`}>
                     ▼
                 </span>

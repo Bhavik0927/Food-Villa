@@ -1,26 +1,31 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-    return (
-        <div className="h-15 flex justify-between items-center border-solid border-2 border-gray-500 ">
-            <ul className="flex gap-3 font-bold text-md">
-                <Link to="/">
-                    <li>Home</li>
-                </Link>
+    const storeItems = useSelector((store) => store.cart.items);
 
-                <Link to="/about">
-                    <li>About</li>
-                </Link>
-                <Link to="/contact">
-                    <li>Contact</li>
-                </Link>
-                <Link to="/instamart">
-                    <li>InstaMart</li>
-                </Link>
+    return (
+        <div className="sticky top-0 z-10 bg-gray-50 flex justify-between overflow-hidden h-[6rem] items-center  pr-2">
+            <img className="w-[11rem] h-[9rem] cursor-pointer " src="src/file.png" alt="food" />
+            <div className="w-3/4 flex justify-evenly ">
+                <ul className="flex gap-10 font-semibold text-xl">
+                    <Link to="/">
+                        <li>Home</li>
+                    </Link>
+                    <Link to="/about">
+                        <li>About</li>
+                    </Link>
+                    <Link to="/contact">
+                        <li>Contact</li>
+                    </Link>
+                </ul>
+
                 <Link to="/cart">
-                    <li data-testid="cart">CartItem</li>
+                    <li className="relative flex items-center text-2xl ">
+                    🛒<span className="w-6 h-6  flex items-center justify-center rounded-full m-auto text-sm font-bold  absolute -top-[10px] -right-5 bg-yellow-400">{storeItems.length} </span>
+                    </li>
                 </Link>
-            </ul>
+            </div>
         </div>
     )
 }

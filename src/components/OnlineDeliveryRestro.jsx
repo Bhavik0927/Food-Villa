@@ -9,7 +9,7 @@ const OnlineDeliveryRestro = ({ props, props2 }) => {
     
     
     return (
-        <div>
+        <div className="px-40 ">
             <h1 className="text-2xl font-bold">{title}</h1>
             <div className=" flex flex-wrap justify-center scroll-smooth m-2 mb-2 ">
                 {
