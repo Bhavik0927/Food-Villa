@@ -6,7 +6,7 @@ const Header = () => {
 
     return (
         <div className="sticky top-0 z-10 bg-gray-50 flex justify-between overflow-hidden h-[6rem] items-center  pr-2">
-            <img className="w-[11rem] h-[9rem] cursor-pointer " src="src/file.png" alt="food" />
+            <img className="w-[11rem] h-[9rem] cursor-pointer " src="../src/file.png" alt="food" />
             <div className="w-3/4 flex justify-evenly ">
                 <ul className="flex gap-10 font-semibold text-xl">
                     <Link to="/">

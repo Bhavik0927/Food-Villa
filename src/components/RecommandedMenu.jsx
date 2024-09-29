@@ -3,7 +3,7 @@ import MenuCard from "./MenuCard";
 import { useState } from "react";
 
 const RecommandedMenu = ({ props }) => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(true);
    
     console.log(props)
     const Recommanded = get(props, '[2].card.card.itemCards');

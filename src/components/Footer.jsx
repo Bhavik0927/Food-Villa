@@ -5,7 +5,7 @@ const Footer = () => {
     <div className="bg-slate-900 font-semibold text-gray-400 w-full h-96">
       <div className="flex gap-16 justify-center pt-6">
         <div className="w-[9.5rem]">
-          <img src="src/file.png" alt="logo" />
+          <img src="../src/file.png" alt="logo" />
           <h2 className="flex gap-1"><LuCreativeCommons className="text-4xl "/>2024 Crunchy Bites Technologies Pvt. Ltd</h2>
         </div>
 
