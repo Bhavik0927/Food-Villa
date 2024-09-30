@@ -31,6 +31,7 @@ const RestaurantMenu = () => {
         }
     }
 
+    
     return (restaurant.length === 0) ? ("Data is fetching...") : (
         <div className="px-44 ">
             <h1 className="font-bold text-2xl mb-4">{restaurant[0]?.card?.card?.text}</h1>
@@ -49,8 +50,9 @@ const RestaurantMenu = () => {
                     <h2 className="flex gap-1 items-center py-4 text-gray-400 font-normal"><MdLocationPin /> {(restaurant[2]?.card?.card?.info?.slugs.restaurant).replace(/-/g, ' ')},{restaurant[2]?.card?.card?.info?.city} </h2>
                 </div>
                 <hr />
-                <div className="flex justify-center">
+                <div className="flex justify-center items-center flex-col pt-2">
                     <h1 className="font-bold flex items-center">For better experience, download Our Application</h1>
+                    <img className="w-[20rem] h-[6.5rem] " src="../src/store.png" alt="play store" />
                 </div>
             </div>
         </div>

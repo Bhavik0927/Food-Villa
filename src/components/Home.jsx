@@ -3,7 +3,7 @@ import OurMind from "./OurMind";
 import TopRestaurant from "./TopRestaurant";
 import OnlineDeliveryRestro from "./OnlineDeliveryRestro";
 import useLocation from "../../utils/useLocation";
-import Loading from "./Loading";
+import Shimmer from "./Shimmer";
 
 const Home = () => {
 
@@ -34,7 +34,7 @@ const Home = () => {
   }
 
 
-  return (loading) ? (<Loading />) :(
+  return (loading) ? (<Shimmer />) :(
     <>
       <OurMind props={allRestaurant.cards[0]} />
       <TopRestaurant props={allRestaurant.cards[1]} />
