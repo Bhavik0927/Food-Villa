@@ -1,17 +1,27 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Remove_Item, Increase_quantity, Decrease_quantity } from "../../utils/CartSlice";
+import { Remove_Item, Increase_quantity, Decrease_quantity,clearCart } from "../../utils/CartSlice";
 import { MdOutlineCancel } from "react-icons/md";
 import EmptyCart from "./EmptyCart";
+import { useState } from "react";
+import ConfirmCard from "./ConfirmCard";
 
 
 const Cart = () => {
+
+
   const cartItems = useSelector((store) => store.cart.items);
-  // console.log(cartItems);
-  
   const dispatch = useDispatch();
+  console.log(cartItems);
+  // const prodPrice = prop?.defaultPrice || prop?.price;
 
-  const total = cartItems.reduce((total, item) => { return total + item.inStock * item.price }, 0);
+  const total = cartItems.reduce((total, item) => { return total + item.inStock * (item.defaultPrice || item.price)  }, 0);
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const closeBtn = () => {
+    setIsOpen(false);
+    dispatch(clearCart());
+  }
 
   return (cartItems.length === 0) ? (<EmptyCart />) : (
     <div className=" flex px-40 py-2">
@@ -36,7 +46,7 @@ const Cart = () => {
                     </button>
                   </div>
 
-                  <h2>₹{Math.floor(e.price / 100) * (e.inStock)}</h2>
+                  <h2>₹{Math.floor((e?.defaultPrice || e?.price) / 100) * (e.inStock)}</h2>
                   <button className="text-green-500 text-xl" onClick={() => dispatch(Remove_Item(e.id))}><MdOutlineCancel /> </button>
                 </div>
 
@@ -50,10 +60,10 @@ const Cart = () => {
 
       </div>
 
-      <div className="w-1.75/4 bg-slate-300 rounded-lg min-h-5">
-        <h1 className="text-white font-medium">Bill Details</h1>
-        <div className="flex flex-col items-center gap-5">
-          <div className="p-2 rounded-lg w-64 h-32 bg-white  shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]" >
+      <div className="w-1/3 bg-slate-300 rounded-lg min-h-5">
+        <h1 className="text-white font-medium ml-2">Bill Details</h1>
+        <div className="flex flex-col items-center gap-5 mt-3">
+          <div className="p-2 rounded-lg w-[17rem] h-32 bg-white  shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]" >
             <div className="flex justify-between">
               <h1>Item Total</h1>
               <h1>{(total / 100).toFixed(2)}</h1>
@@ -69,7 +79,10 @@ const Cart = () => {
             </div>
           </div>
 
-          <button className="bg-yellow-400 px-2 py-1 rounded-lg text-white font-medium cursor-pointer" >Place Your Order</button>
+          <button className="bg-yellow-400 px-2 py-1 rounded-lg text-white font-medium cursor-pointer" onClick={() => setIsOpen(true)}>
+            Place Your Order
+          </button>
+          {isOpen && <ConfirmCard closeBtn={closeBtn} />}
         </div>
       </div>
 

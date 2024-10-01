@@ -5,6 +5,7 @@ import LocationCard from "./LocationCard";
 import Deals from "./Deals";
 import RecommandedMenu from "./RecommandedMenu";
 import { MdLocationPin } from "react-icons/md";
+import MenuShimmer from "./MenuShimmer";
 
 const RestaurantMenu = () => {
     const [restaurant, setRestaurant] = useState([]);
@@ -32,7 +33,7 @@ const RestaurantMenu = () => {
     }
 
     
-    return (restaurant.length === 0) ? ("Data is fetching...") : (
+    return (restaurant.length === 0) ? (<MenuShimmer />) : (
         <div className="px-44 ">
             <h1 className="font-bold text-2xl mb-4">{restaurant[0]?.card?.card?.text}</h1>
             <LocationCard props={restaurant[2]?.card?.card?.info} />
