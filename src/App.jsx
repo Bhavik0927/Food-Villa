@@ -5,6 +5,7 @@ import About from "./components/About";
 import Cart from "./components/Cart";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
+import ContactUs from "./components/Contact";
 
 export const RenderRoutes = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ export const RenderRoutes = createBrowserRouter([
       {
         path: '/about',
         element: <About />
+      },
+      {
+        path: '/Contact',
+        element: <ContactUs />
       },
       {
         path: '/cart',
